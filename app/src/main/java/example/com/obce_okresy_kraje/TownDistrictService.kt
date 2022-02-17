@@ -1,20 +1,20 @@
 package example.com.obce_okresy_kraje
 
-import example.com.obce_okresy_kraje.model.District
-import example.com.obce_okresy_kraje.model.Region
-import example.com.obce_okresy_kraje.model.Town
+import example.com.obce_okresy_kraje.model.DistrictItems
+import example.com.obce_okresy_kraje.model.RegionItems
+import example.com.obce_okresy_kraje.model.TownItems
 import retrofit2.Call
 import retrofit2.http.GET
 
 private interface TownDistrictService {
     @GET("/kraje.json")
-    fun getRegions(): Call<List<Region>>
+    fun getRegions(): Call<RegionItems>
 
     @GET("/okresy.json")
-    fun getDistricts(): Call<List<District>>
+    fun getDistricts(): Call<DistrictItems>
 
     @GET("/obce.json")
-    fun getTowns(): Call<List<Town>>
+    fun getTowns(): Call<TownItems>
 
     companion object {
         const val BASE_URL = "https://data.mpsv.cz/od/soubory/ciselniky"
