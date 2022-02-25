@@ -1,4 +1,4 @@
-package example.com.obce_okresy_kraje.model
+package example.com.obce_okresy_kraje.domain.models
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

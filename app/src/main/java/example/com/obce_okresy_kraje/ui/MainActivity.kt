@@ -1,10 +1,12 @@
-package example.com.obce_okresy_kraje
+package example.com.obce_okresy_kraje.ui
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.moshi.Moshi
-import example.com.obce_okresy_kraje.model.TownItems
+import example.com.obce_okresy_kraje.R
+import example.com.obce_okresy_kraje.data.network.TownDistrictService
+import example.com.obce_okresy_kraje.domain.models.TownItems
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -18,7 +20,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 class MainActivity : AppCompatActivity(), CoroutineScope {
 
     private val job = Job()
-    override val coroutineContext = job + Dispatchers.Main
+    override val coroutineContext = job + Dispatchers.IO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
