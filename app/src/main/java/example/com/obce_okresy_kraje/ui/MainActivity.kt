@@ -3,7 +3,11 @@ package example.com.obce_okresy_kraje.ui
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material.Text
+
+import androidx.compose.runtime.Composable
+
 import com.squareup.moshi.Moshi
 import example.com.obce_okresy_kraje.R
 import example.com.obce_okresy_kraje.data.network.TownDistrictService
@@ -25,7 +29,11 @@ class MainActivity : ComponentActivity(), CoroutineScope {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContent {
+            Text(text = "Obce, Okresy, Kraje")
+        }
+
+      //  setContentView(R.layout.activity_main)
 
 
         launch { getTowns() }
