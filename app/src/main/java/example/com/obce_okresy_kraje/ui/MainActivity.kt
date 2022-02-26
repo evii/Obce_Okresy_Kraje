@@ -2,6 +2,7 @@ package example.com.obce_okresy_kraje.ui
 
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.moshi.Moshi
 import example.com.obce_okresy_kraje.R
@@ -17,7 +18,7 @@ import retrofit2.Retrofit
 import retrofit2.awaitResponse
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class MainActivity : AppCompatActivity(), CoroutineScope {
+class MainActivity : ComponentActivity(), CoroutineScope {
 
     private val job = Job()
     override val coroutineContext = job + Dispatchers.IO
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         launch { getTowns() }
     }
