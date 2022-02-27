@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Obce_Okresy_Kraje</string>
+    <string name="district_for_town_title">Najdi okres a kraj pro dané město:</string>
+</resources>

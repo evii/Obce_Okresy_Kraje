@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Obce_Okresy_Kraje</string>
+    <string name="district_for_town_title">Find district and region for town:</string>
 </resources>

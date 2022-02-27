@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-
 import androidx.compose.runtime.Composable
-
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.squareup.moshi.Moshi
 import example.com.obce_okresy_kraje.R
 import example.com.obce_okresy_kraje.data.network.TownDistrictService
@@ -30,19 +34,27 @@ class MainActivity : ComponentActivity(), CoroutineScope {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Text(text = "Obce, Okresy, Kraje")
+            setTitle()
         }
 
-      //  setContentView(R.layout.activity_main)
-
+        //  setContentView(R.layout.activity_main)
 
         launch { getTowns() }
     }
 
+    @Preview
+    @Composable
+    fun setTitle() {
+        Text(
+            stringResource(id = R.string.district_for_town_title),
+            style = MaterialTheme.typography.h4,
+            modifier = Modifier.padding(all = 16.dp),
+            color = MaterialTheme.colors.primaryVariant
+        )
+    }
+
     private suspend fun getTowns() {
-
         val moshi = Moshi.Builder().build()
-
         val retrofit = Retrofit.Builder()
             .baseUrl(TownDistrictService.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
