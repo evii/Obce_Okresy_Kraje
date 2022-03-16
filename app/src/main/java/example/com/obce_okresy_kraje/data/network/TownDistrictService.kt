@@ -1,4 +1,4 @@
-package example.com.obce_okresy_kraje
+package example.com.obce_okresy_kraje.data.network
 
 import example.com.obce_okresy_kraje.model.DistrictItems
 import example.com.obce_okresy_kraje.model.RegionItems
