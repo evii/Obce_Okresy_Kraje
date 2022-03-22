@@ -6,9 +6,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontWeight
 
 @Composable
-fun ResultText(text: String = "") {
+fun ResultText(text: String? = "") {
     Text(
-        text = text,
+        text = text ?: "",
         style = MaterialTheme.typography.h6,
         fontWeight = FontWeight.Bold,
         color = MaterialTheme.colors.primaryVariant
